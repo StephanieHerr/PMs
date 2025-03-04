@@ -14,7 +14,7 @@ jobs:
     - name: Build
       run: dotnet build PMs.sqlproj
       
-   - name: Extract Archive
+    - name: Extract Archive
       run: |
         $ErrorActionPreference = 'Stop'; 
         try { Add-Type -AssemblyName System.IO.Compression.FileSystem } catch { }; 
