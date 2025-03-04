@@ -1,0 +1,11 @@
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\bin\Debug\PMs.dacpac
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\obj\Debug\PMs.sqlproj.AssemblyReference.cache
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\obj\Debug\PMs.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\obj\Debug\Model.xml
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\obj\Debug\refactor.xml
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\obj\Debug\postdeploy.sql
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\obj\Debug\predeploy.sql
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\obj\Debug\PMs.dll
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\obj\Debug\PMs.pdb
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\bin\Debug\PMs.dll
+c:\Users\stephanie.herr\Documents\VS Code\PMs\PMs\bin\Debug\PMs.pdb
