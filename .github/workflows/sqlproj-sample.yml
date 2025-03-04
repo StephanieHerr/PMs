@@ -15,4 +15,5 @@ jobs:
       run: dotnet build PMs.sqlproj
       
     - name: Deploy
-      run: bash sqlpackage /Action:Publish /SourceFile:bin/Debug/PMs.dacpac /TargetConnectionString:${{ secrets.SQL_CONNECTION_STRING }}
+      run: |
+        & sqlpackage /Action:Publish /SourceFile:bin/Debug/PMs.dacpac /TargetConnectionString:${{ secrets.SQL_CONNECTION_STRING }}
