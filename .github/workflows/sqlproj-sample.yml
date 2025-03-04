@@ -22,6 +22,6 @@ jobs:
     - name: Deploy
       uses: azure/sql-action@v2
       with:
-      connection-string: 'Server=localhost;Database=PMs;Integrated Security=True;'
+      connection-string:  ${{ secrets.SQL_CONNECTION_STRING }}
       action: 'publish'
       path: 'bin/Debug/PMs.dacpac'
