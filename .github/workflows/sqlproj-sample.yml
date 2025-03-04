@@ -14,19 +14,9 @@ jobs:
     - name: Build
       run: dotnet build PMs.sqlproj
       
-    - name: Extract Archive
-      run: |
-        $ErrorActionPreference = 'Stop'; 
-        try { Add-Type -AssemblyName System.IO.Compression.FileSystem } catch { }; 
-        if ((Get-Command -Name Expand-Archive -Module Microsoft.PowerShell.Archive -ErrorAction Ignore)) { 
-            Expand-Archive -LiteralPath 'bin/Debug/PMs.dacpac' -DestinationPath 'C:\Users\stephanie.herr\Documents\VS Code\Output' -Force 
-        } else {
-            [System.IO.Compression.ZipFile]::ExtractToDirectory('bin/Debug/PMs.dacpac', 'C:\Users\stephanie.herr\Documents\VS Code\Output', $true)
-        }
-
     - name: Deploy
       uses: azure/sql-action@v2
       with:
         connection-string:  ${{ secrets.SQL_CONNECTION_STRING }}
         action: 'publish'
-        path: 'C:/Users/stephanie.herr/Documents/VS Code/Output/PMs.dacpac'
+        path: 'bin/Debug/PMs.dacpac'
