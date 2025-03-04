@@ -19,8 +19,7 @@ jobs:
     - name: Build
       run: dotnet build PMs.sqlproj
 
-
-  - name: Deploy
+    - name: Deploy
       uses: azure/sql-action@v2
       with:
       connection-string: Server=localhost;Database=PMs;Integrated Security=True;
