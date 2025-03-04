@@ -19,9 +19,9 @@ jobs:
         $ErrorActionPreference = 'Stop'; 
         try { Add-Type -AssemblyName System.IO.Compression.FileSystem } catch { }; 
         if ((Get-Command -Name Expand-Archive -Module Microsoft.PowerShell.Archive -ErrorAction Ignore)) { 
-            Expand-Archive -LiteralPath 'C:\path\to\your\archive.zip' -DestinationPath 'C:\path\to\destination' -Force 
+            Expand-Archive -LiteralPath 'bin/Debug/PMs.dacpac' -DestinationPath 'C:\Users\stephanie.herr\Documents\VS Code\Output' -Force 
         } else {
-            [System.IO.Compression.ZipFile]::ExtractToDirectory('C:\path\to\your\archive.zip', 'C:\path\to\destination', $true)
+            [System.IO.Compression.ZipFile]::ExtractToDirectory('bin/Debug/PMs.dacpac', 'C:\Users\stephanie.herr\Documents\VS Code\Output', $true)
         }
 
     - name: Deploy
@@ -29,4 +29,4 @@ jobs:
       with:
         connection-string:  ${{ secrets.SQL_CONNECTION_STRING }}
         action: 'publish'
-        path: 'bin/Debug/PMs.dacpac'
+        path: 'C:/Users/stephanie.herr/Documents/VS Code/Output/PMs.dacpac'
