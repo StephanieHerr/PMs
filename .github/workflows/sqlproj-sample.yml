@@ -14,6 +14,17 @@ jobs:
     - name: Build
       run: dotnet build PMs.sqlproj
 
+
+   - name: Extract Archive
+      run: |
+        $ErrorActionPreference = 'Stop'; 
+        try { Add-Type -AssemblyName System.IO.Compression.FileSystem } catch { }; 
+        if ((Get-Command -Name Expand-Archive -Module Microsoft.PowerShell.Archive -ErrorAction Ignore)) { 
+            Expand-Archive -LiteralPath 'C:\path\to\your\archive.zip' -DestinationPath 'C:\path\to\destination' -Force 
+        } else {
+            [System.IO.Compression.ZipFile]::ExtractToDirectory('C:\path\to\your\archive.zip', 'C:\path\to\destination', $true)
+        }
+
     - name: Deploy
       uses: azure/sql-action@v2
       with:
