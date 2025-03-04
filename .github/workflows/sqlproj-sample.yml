@@ -13,8 +13,7 @@ jobs:
 
     - name: Build
       run: dotnet build PMs.sqlproj
-
-
+      
    - name: Extract Archive
       run: |
         $ErrorActionPreference = 'Stop'; 
