@@ -16,5 +16,4 @@ jobs:
       
     - name: Deploy
       run: |
-        sqlpackage /Action:Publish /SourceFile:bin/Debug/PMs.dacpac /TargetConnectionString:${{ secrets.SQL_CONNECTION_STRING }}
-      shell: bash
+        & sqlpackage /Action:Publish /SourceFile:bin/Debug/PMs.dacpac /TargetConnectionString:${{ secrets.SQL_CONNECTION_STRING }}
