@@ -15,6 +15,7 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+        install-path: 'C:\Program Files\dotnet'
 
     - name: Build
       run: dotnet build PMs.sqlproj
